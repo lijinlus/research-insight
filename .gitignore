@@ -1,0 +1,6 @@
+tmp/
+dist/
+research-insight-review.md
+.DS_Store
+__pycache__/
+*.pyc

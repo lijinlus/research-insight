@@ -1,0 +1,4 @@
+interface:
+  display_name: "研究思路与亮点"
+  short_description: "探索研究问题、定位可信贡献，并把主张转成可执行的验证方案与研究主线"
+  default_prompt: "使用 $research-insight 分析下面的研究材料：判断当前最值得推进的问题，提炼有依据的主张，并给出适合这一阶段的下一步。"
