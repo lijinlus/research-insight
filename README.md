@@ -1,25 +1,43 @@
 # Research Insight · 研究思路与亮点
 
-一个面向科研思路的 Codex skill：从模糊 idea、已有方案或实验结果中，提炼有依据的贡献，找出最威胁主张的缺口，并设计下一步验证。
+一个面向科研思路的通用 Codex skill：从模糊 idea、已有方案或实验结果中，提升研究立意与技术洞察，组织有证据支撑的研究主线，并设计下一步验证。
 
 **关注问题、创新性与证据设计，不做语法润色。**
 
 Research ideas, defensible contributions, and falsifiable experiments. A Chinese-first agent skill with 35 annotated paper cases, grounded in primary sources.
 
-[Skill 正文](research-insight/SKILL.md) · [35 篇论文索引](research-insight/references/paper-library/index.md) · [跨论文归纳](research-insight/references/paper-library/synthesis.md) · [v0.1.0 下载](https://github.com/lijinlus/research-insight/releases/tag/v0.1.0)
+[Skill 正文](research-insight/SKILL.md) · [35 篇论文索引](research-insight/references/paper-library/index.md) · [跨论文归纳](research-insight/references/paper-library/synthesis.md) · [v0.2.0 下载](https://github.com/lijinlus/research-insight/releases/tag/v0.2.0)
 
 ## 它帮你做什么
 
 | 你的阶段 | Skill 的工作 | 主要交付 |
 | --- | --- | --- |
-| 只有主题或类比 | 探索少量可区分的研究假设 | 候选主张、价值与成本、优先验证项 |
-| 已有 idea / proposal | 诊断问题、近邻差异与证据链 | 最关键缺口、修订主张、最小验证卡 |
-| 已有结果或草稿 | 判断结果实际支持什么 | 主张—证据对应关系、补证项、研究主线 |
-| 想学习优秀论文 | 拆解原文的知识增量与论证 | 关键证据、边界、可迁移的研究操作 |
+| 只有主题或类比 | 展开不同立意、技术联想与候选洞察 | 候选角度、潜在增量、技术草图；按需比较与选择验证项 |
+| 已有 idea / proposal | 保留有潜力的亮点，诊断近邻差异、技术思路与证据链 | 补强方向、修订定位、实验/证明/反例等适合的验证方案 |
+| 已有结果或草稿 | 判断结果支持的洞察，组织论证 | 主张—证据关系、补证项、关键图与研究主线 |
+| 想学习优秀论文 | 拆解原文的立意、技术转折与论证 | 叙事如何接上证据、边界与可迁移操作 |
 
-它会检查：你想改善什么、需要保留什么、允许付出什么成本，以及最接近的工作是否已经解释了这个结果。涉及金融或量化时，还会检查时间顺序、信息可见性、选择偏差和交易成本等条件。
+它会检查：你想改善什么、需要保留什么、允许付出什么成本，以及最接近的工作是否已经解释了这个结果。具体领域的假设、可用信息和评价惯例从当前任务获取，不预设应用领域。
 
 支持方法、理论、资源、评测、系统和可靠负结果等贡献形式；不要求每篇论文都套用“发现现象—解释根因—提出方法”的结构。
+
+讨论力度随阶段调整：早期探索允许大胆猜想、技术草图与尚不完整的候选；需要取舍、确认主张或投入资源时，再细化近邻比较和验证方案。可以围绕一个直觉或卡点持续讨论，篇幅与结构随问题调整，事实与假设始终分清。
+
+## 四个维度与六种范式
+
+找亮点时，从**主题立意、技术洞察、证据设计、研究叙事**中选择最有潜力的方向推进。针对用户提供文章中的观点，[研究操作库](research-insight/references/research-moves.md)保留六种范式的原名及其可执行操作：根因手术刀、反直觉重构、理论照亮经验、新基准暴露失效、社会价值叙事、极简统一美学。
+
+[研究叙事](research-insight/references/research-story.md)进一步说明如何形成工作定位、让方法由洞察导出、安排关键图，以及将重要增量放进标题与引言前部。这些是生成和提高研究角度的启发，不是获奖门槛，也不要求一个选题套齐六种范式。
+
+当前版本为 `v0.2.0`，包括通用科研定位、按阶段展开的讨论，以及原则与案例分层。完整变化见 [CHANGELOG](CHANGELOG.md)。
+
+## 默认上下文与可选案例
+
+`v0.2.0` 采用“先分析当前材料，再按具体问题选择资料”的路径。`SKILL.md` 及三份按需参考只保留原则，不嵌入固定论文结论、特定应用选题或开发示范答案。四维与六种范式继续用于生成和提高研究角度，允许其他贡献路径。
+
+35 篇卡片与跨论文归纳保留在可选案例库；用户要求从案例学习，或已经明确哪项问题需要借鉴时再取相关部分。核验当前课题的近邻原文仍照常进行。
+
+校准题移到仓库级 [evals/research-insight](evals/research-insight/README.md)，任务和评估标准分开。普通 skill 安装仅取 `research-insight/`，不包含这些评分材料；整仓下载仍包含评测文件，需要独立上下文和可见文件控制才能形成更强隔离。这个设计减少默认案例暴露，尚未证明消除了锚定或提高了研究效果。
 
 ## 安装
 
@@ -28,14 +46,14 @@ Research ideas, defensible contributions, and falsifiable experiments. A Chinese
 给 Codex 发送下面这句话，使用内置的 `skill-installer` 安装固定版本：
 
 ```text
-$skill-installer 安装 https://github.com/lijinlus/research-insight/tree/v0.1.0/research-insight
+$skill-installer 安装 https://github.com/lijinlus/research-insight/tree/v0.2.0/research-insight
 ```
 
 如果已有同名 skill，先检查现有版本，再决定如何更新。
 
 ### 手动安装
 
-从 [Releases](https://github.com/lijinlus/research-insight/releases/tag/v0.1.0) 下载 `research-insight-v0.1.0.zip`，解压后将整个 `research-insight` 文件夹放入以下任一位置：
+从 [Releases](https://github.com/lijinlus/research-insight/releases/tag/v0.2.0) 下载 `research-insight-v0.2.0.zip`，解压后将整个 `research-insight` 文件夹放入以下任一位置：
 
 | 使用范围 | 目录 |
 | --- | --- |
@@ -54,10 +72,11 @@ $skill-installer 安装 https://github.com/lijinlus/research-insight/tree/v0.1.0
 
 ```text
 $research-insight
-我想研究多 Agent 是否能改善金融新闻分析。现在只有这个方向，
-还没有证据证明协作有价值。请提出少量可区分的研究假设，
-比较与单模型、更多采样预算等简单替代方案的差异，推荐最先做的实验。
-约束：先使用已有模型和小规模数据，不训练完整系统。
+研究主题：【任务或现象】
+已有材料：【观察、相关工作或初步结果】
+实际约束：【可用数据、实现基础、时间与计算预算】
+请提出少量有依据的研究角度，说明核心洞察与潜在知识增量，
+比较价值和验证成本，推荐一个最先检验的问题。
 ```
 
 **诊断一个方案：**
@@ -94,7 +113,7 @@ $research-insight
 - 未排除的解释、适用边界与可迁移的研究操作；
 - 实际阅读章节/页码、版本和一手来源。
 
-先读[跨论文归纳](research-insight/references/paper-library/synthesis.md)，再按问题进入[逐篇索引](research-insight/references/paper-library/index.md)。Skill 按需读取少量相关卡片，不默认把全部论文分析加入上下文。
+需要学习案例时，可读[跨论文归纳](research-insight/references/paper-library/synthesis.md)，或按具体问题进入[逐篇索引](research-insight/references/paper-library/index.md)。普通研究分析先理解当前任务，不默认读取案例库或归纳。
 
 我们没有把“单一 claim”“一句话机制”或“有惊艳现象”设为所有好论文的必要条件。案例分析也不等同于官方给出的获奖原因。
 
@@ -106,21 +125,27 @@ research-insight/
 ├── agents/openai.yaml            # Codex 展示名称与默认提示
 └── references/
     ├── research-moves.md         # 产生与诊断研究思路的操作
+    ├── research-story.md         # 研究定位、六种论证路线、关键图与引言
     ├── evidence-design.md        # 主张、测量、比较与实验设计
-    ├── quant-ml.md               # 金融与量化的条件检查
-    ├── calibration-cases.md      # 虚构的行为验收场景
     └── paper-library/
         ├── index.md
         ├── synthesis.md
         ├── manifest.json        # 来源、版本、PDF 哈希与读取范围
         └── 01-*.md … 35-*.md
+
+evals/research-insight/           # 仓库维护材料，不随 skill 安装
+├── README.md                    # 角色与评测隔离约定
+├── prompts.jsonl                # 不含预期答案的开发任务
+└── rubric.md                    # 评估者使用的验收标准
 ```
 
 Skill 本身不依赖额外 Python 包、API key 或特定 GPU。核验新论文和创新性需要可用的检索/阅读工具；无法取得原文时应明确保留判断，不能编造文献或实验。它不会自动启动模型训练。
 
-## 首版验证与边界
+## 验证与边界
 
-`v0.1.0` 已通过 skill 格式检查、包内链接检查、35 条论文记录与卡片一致性检查，以及安装包解压检查。研究流程做过 7 个场景的人工自查；校准文件中的 A–P 场景是验收规范，不是已运行的独立评测。
+`v0.2.0` 已通过 skill 格式、展示元数据、包内链接、35 条论文记录与卡片一致性，以及安装包解压与逐文件比对检查。安装包仅包含 `research-insight/`，不包含开发任务和评分材料。
+
+首版做过 7 个场景的人工自查；A–P 来自首版验收规范，Q–T 为后续补充。全部 20 题及评分标准保存在仓库级 `evals/`，属于开发回归规格，不是已运行的独立评测。尚未形成隐藏留出集，也未进行独立行为评测。
 
 论文卡片读取了引言、核心方法或形式定义、主结果、关键对照与讨论，并按需检查部分附录；**没有复现实验，也没有逐行审完所有证明和附录**。具体范围以各卡片和 manifest 为准。
 
