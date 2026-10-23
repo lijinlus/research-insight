@@ -8,6 +8,12 @@ Research ideas, defensible contributions, and falsifiable experiments. A Chinese
 
 [Skill 正文](research-insight/SKILL.md) · [35 篇论文索引](research-insight/references/paper-library/index.md) · [跨论文归纳](research-insight/references/paper-library/synthesis.md) · [v0.2.0 下载](https://github.com/lijinlus/research-insight/releases/tag/v0.2.0)
 
+## 未发布修改
+
+当前工作树精简了默认入口，让探索、判断、结果理解与论文组织随讨论切换；研究操作按需要选用，范式名称保留为辅助标签。思路停滞时可以浏览案例索引，再选择相关卡片，跨论文归纳不再是前置阅读。
+
+这轮修改旨在减少重复要求与过早收敛，尚未进行独立行为对照，不能据此声称减少了锚定或提高了研究效果。多轮对照准备见 [评测方案](evals/research-insight/multiturn-plan.md)。下方 `v0.2.0` 下载与安装链接仍指向已发布版本，不包含这些未发布修改。
+
 ## 它帮你做什么
 
 | 你的阶段 | Skill 的工作 | 主要交付 |
@@ -25,17 +31,17 @@ Research ideas, defensible contributions, and falsifiable experiments. A Chinese
 
 ## 四个维度与六种范式
 
-找亮点时，从**主题立意、技术洞察、证据设计、研究叙事**中选择最有潜力的方向推进。针对用户提供文章中的观点，[研究操作库](research-insight/references/research-moves.md)保留六种范式的原名及其可执行操作：根因手术刀、反直觉重构、理论照亮经验、新基准暴露失效、社会价值叙事、极简统一美学。
+找亮点时，先从当前问题、观察和约束发展候选。需要打开角度时，再借助**主题立意、技术洞察、证据设计、研究叙事**等入口。[研究操作库](research-insight/references/research-moves.md)提供可执行操作，并保留六种范式的原名作为对照标签：根因手术刀、反直觉重构、理论照亮经验、新基准暴露失效、社会价值叙事、极简统一美学。
 
 [研究叙事](research-insight/references/research-story.md)进一步说明如何形成工作定位、让方法由洞察导出、安排关键图，以及将重要增量放进标题与引言前部。这些是生成和提高研究角度的启发，不是获奖门槛，也不要求一个选题套齐六种范式。
 
-当前版本为 `v0.2.0`，包括通用科研定位、按阶段展开的讨论，以及原则与案例分层。完整变化见 [CHANGELOG](CHANGELOG.md)。
+最新发布版本为 `v0.2.0`，包括通用科研定位、按阶段展开的讨论，以及原则与案例分层。未发布修改另列于 [CHANGELOG](CHANGELOG.md)。
 
 ## 默认上下文与可选案例
 
 `v0.2.0` 采用“先分析当前材料，再按具体问题选择资料”的路径。`SKILL.md` 及三份按需参考只保留原则，不嵌入固定论文结论、特定应用选题或开发示范答案。四维与六种范式继续用于生成和提高研究角度，允许其他贡献路径。
 
-35 篇卡片与跨论文归纳保留在可选案例库；用户要求从案例学习，或已经明确哪项问题需要借鉴时再取相关部分。核验当前课题的近邻原文仍照常进行。
+35 篇卡片与跨论文归纳保留在可选案例库。当前工作树也允许在思路停滞时浏览索引寻找启发，再按相关性选择卡片；借用时说明操作与条件差异。核验当前课题的近邻原文仍照常进行。
 
 校准题移到仓库级 [evals/research-insight](evals/research-insight/README.md)，任务和评估标准分开。普通 skill 安装仅取 `research-insight/`，不包含这些评分材料；整仓下载仍包含评测文件，需要独立上下文和可见文件控制才能形成更强隔离。这个设计减少默认案例暴露，尚未证明消除了锚定或提高了研究效果。
 
@@ -98,7 +104,7 @@ $research-insight
 【论文链接或 PDF】
 ```
 
-一次诊断通常会围绕“当前判断 → 最关键缺口 → 修订后的主张 → 下一步验证”展开。问题简单时只回答主要瓶颈，不强制生成长报告。
+回答随当前问题组织：可以只澄清概念、发展一个假设、解释一项结果，或给出有依据的投入建议。无需每次交付完整研究方案。
 
 ## 35 篇案例库
 
@@ -136,7 +142,8 @@ research-insight/
 evals/research-insight/           # 仓库维护材料，不随 skill 安装
 ├── README.md                    # 角色与评测隔离约定
 ├── prompts.jsonl                # 不含预期答案的开发任务
-└── rubric.md                    # 评估者使用的验收标准
+├── rubric.md                    # 评估者使用的验收标准
+└── multiturn-plan.md            # 未运行的真实多轮对照方案
 ```
 
 Skill 本身不依赖额外 Python 包、API key 或特定 GPU。核验新论文和创新性需要可用的检索/阅读工具；无法取得原文时应明确保留判断，不能编造文献或实验。它不会自动启动模型训练。
